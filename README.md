@@ -1,0 +1,19 @@
+
+# Chalkboard
+
+Move objects along an axis or a plane with VRC Pickups in a synced fashion with acceptable interpolation.
+
+# Installing
+
+Head to my [VCC Listing](https://jansharp.github.io/vrc/vcclisting.xhtml) and follow the instructions there.
+
+# Features
+
+- Optionally limiting the movement to any combination of the 3 axis
+- Extra support for VR to use the hand position to more accurately move the target object
+  - In desktop it's currently just using the position of the object with the VRC pickup, which with bigger objects can get pretty inaccurate
+- Syncing, naturally including late joiners (This one is one of the easier ones to sync)
+
+# Ideas
+
+In regards to the desktop issue mentioned above, I've thought about ray casting from the center of the screen to find where you're actually picking up the object and use that as a relative position. Theoretically this would fix the issue, but the chance for edge cases is not exactly zero, and is also non trivial because getting the center of the screen isn't easy. Or it is and I just don't know about it.
