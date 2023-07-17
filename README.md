@@ -14,6 +14,8 @@ Head to my [VCC Listing](https://jansharp.github.io/vrc/vcclisting.xhtml) and fo
   - In desktop it's currently just using the position of the object with the VRC pickup, which with bigger objects can get pretty inaccurate
 - Syncing, naturally including late joiners (This one is one of the easier ones to sync)
 
+Make sure that the VRC Pickup has its Orientation set to Grip or Gun while the Exact Grip/Gun are left empty. That way the invisible pickupable object will not move towards the hand, it simply stays at the exact relative position that it was at when you picked it up.
+
 # Ideas
 
 In regards to the desktop issue mentioned above, I've thought about ray casting from the center of the screen to find where you're actually picking up the object and use that as a relative position. Theoretically this would fix the issue, but the chance for edge cases is not exactly zero, and is also non trivial because getting the center of the screen isn't easy. Or it is and I just don't know about it.
