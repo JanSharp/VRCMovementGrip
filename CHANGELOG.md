@@ -1,6 +1,12 @@
 
 # Changelog
 
+## [1.1.2] - 2023-07-23
+
+### Added
+
+- Add note about VRC Pickup orientation in readme ([`796e3d4`](https://github.com/JanSharp/VRCMovementGrip/commit/796e3d42d8872a4f349be6979837c900add7a066))
+
 ## [1.1.1] - 2023-07-17
 
 _First version of this package that is in the VCC listing._
@@ -52,6 +58,7 @@ _First version of this package that is in the VCC listing._
 - Add syncing with interpolation ([`bc5fbaa`](https://github.com/JanSharp/VRCMovementGrip/commit/bc5fbaa546fb26282f3190f095a9a26858b54ffb), [`22b4550`](https://github.com/JanSharp/VRCMovementGrip/commit/22b455090db7e18b94d6bb3ad15cf6dae6f31a12), [`fe16657`](https://github.com/JanSharp/VRCMovementGrip/commit/fe16657dcab93e45422df4b9249c88f87b42a443))
 - Drop the grip when multiple people pick it up at the same time ([`dce4ef4`](https://github.com/JanSharp/VRCMovementGrip/commit/dce4ef47a749ee4d2418cfbba921600f597765ef))
 
+[1.1.2]: https://github.com/JanSharp/VRCMovementGrip/releases/tag/v1.1.2
 [1.1.1]: https://github.com/JanSharp/VRCMovementGrip/releases/tag/v1.1.1
 [1.1.0]: https://github.com/JanSharp/VRCMovementGrip/releases/tag/MovementGrip_v1.1.0
 [1.0.2]: https://github.com/JanSharp/VRCMovementGrip/releases/tag/MovementGrip_v1.0.2
