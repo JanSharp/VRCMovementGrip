@@ -13,7 +13,7 @@ namespace JanSharp
     {
         static MovementGripOnBuild() => JanSharp.OnBuildUtil.RegisterType<MovementGrip>(OnBuild);
 
-        internal static bool OnBuild(MovementGrip movementGrip)
+        private static bool OnBuild(MovementGrip movementGrip)
         {
             var updateManager = GameObject.Find("/UpdateManager")?.GetComponent<UpdateManager>();
             if (updateManager == null)
