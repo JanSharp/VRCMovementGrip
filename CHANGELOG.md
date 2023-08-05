@@ -1,6 +1,20 @@
 
 # Changelog
 
+## [1.1.3] - 2023-08-05
+
+### Changed
+
+- Change LICENSE.txt to LICENSE.md so Unity sees it in the package manager window ([`99ea239`](https://github.com/JanSharp/VRCMovementGrip/commit/99ea239ec97ae27dcdf6d535d8373f4fa6fa3253))
+
+### Added
+
+- Add vpm dependency on `com.vrchat.worlds` for clarity ([`0522bf9`](https://github.com/JanSharp/VRCMovementGrip/commit/0522bf9c745145cc68ada36b0ac0c770fc81434a))
+
+### Fixed
+
+- Fix build error on publish ([`7dbdc95`](https://github.com/JanSharp/VRCMovementGrip/commit/7dbdc956872df558b3bd3d2017221ce8d5e449b0))
+
 ## [1.1.2] - 2023-07-23
 
 ### Added
@@ -58,6 +72,7 @@ _First version of this package that is in the VCC listing._
 - Add syncing with interpolation ([`bc5fbaa`](https://github.com/JanSharp/VRCMovementGrip/commit/bc5fbaa546fb26282f3190f095a9a26858b54ffb), [`22b4550`](https://github.com/JanSharp/VRCMovementGrip/commit/22b455090db7e18b94d6bb3ad15cf6dae6f31a12), [`fe16657`](https://github.com/JanSharp/VRCMovementGrip/commit/fe16657dcab93e45422df4b9249c88f87b42a443))
 - Drop the grip when multiple people pick it up at the same time ([`dce4ef4`](https://github.com/JanSharp/VRCMovementGrip/commit/dce4ef47a749ee4d2418cfbba921600f597765ef))
 
+[1.1.3]: https://github.com/JanSharp/VRCMovementGrip/releases/tag/v1.1.3
 [1.1.2]: https://github.com/JanSharp/VRCMovementGrip/releases/tag/v1.1.2
 [1.1.1]: https://github.com/JanSharp/VRCMovementGrip/releases/tag/v1.1.1
 [1.1.0]: https://github.com/JanSharp/VRCMovementGrip/releases/tag/MovementGrip_v1.1.0
