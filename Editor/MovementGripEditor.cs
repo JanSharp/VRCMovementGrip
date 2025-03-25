@@ -15,18 +15,8 @@ namespace JanSharp
 
         private static bool OnBuild(MovementGrip movementGrip)
         {
-            var updateManager = GameObject.Find("/UpdateManager")?.GetComponent<UpdateManager>();
-            if (updateManager == null)
-            {
-                Debug.LogError("MovementGrip requires a GameObject that must be at the root of the scene "
-                    + "with the exact name 'UpdateManager' which has the 'UpdateManager' UdonBehaviour.",
-                    movementGrip);
-                return false;
-            }
-
             SerializedObject movementGripProxy = new SerializedObject(movementGrip);
             movementGripProxy.FindProperty(nameof(movementGrip.pickup)).objectReferenceValue = movementGrip.GetComponent<VRCPickup>();
-            movementGripProxy.FindProperty(nameof(movementGrip.updateManager)).objectReferenceValue = updateManager;
             movementGripProxy.FindProperty(nameof(movementGrip.targetInitialLocalPosition)).vector3Value = movementGrip.toMove.localPosition;
             movementGripProxy.FindProperty(nameof(movementGrip.thisInitialLocalPosition)).vector3Value = movementGrip.transform.localPosition;
             movementGripProxy.FindProperty(nameof(movementGrip.syncedPosition)).vector3Value = movementGrip.targetInitialLocalPosition;
