@@ -1,6 +1,16 @@
 
 # Changelog
 
+## [1.1.5] - 2025-03-25
+
+### Added
+
+- Add singleton reference for UpdateManager to auto instantiate the prefab ([`90c6a0d`](https://github.com/JanSharp/VRCMovementGrip/commit/90c6a0d72da5b814e745872618a9912a037e80f8))
+
+### Fixed
+
+- Fix title in the readme ([`f0ade3b`](https://github.com/JanSharp/VRCMovementGrip/commit/f0ade3be057c733870b34258dd26fa3a395c06f2))
+
 ## [1.1.4] - 2023-10-12
 
 ### Changed
@@ -82,6 +92,7 @@ _First version of this package that is in the VCC listing._
 - Add syncing with interpolation ([`bc5fbaa`](https://github.com/JanSharp/VRCMovementGrip/commit/bc5fbaa546fb26282f3190f095a9a26858b54ffb), [`22b4550`](https://github.com/JanSharp/VRCMovementGrip/commit/22b455090db7e18b94d6bb3ad15cf6dae6f31a12), [`fe16657`](https://github.com/JanSharp/VRCMovementGrip/commit/fe16657dcab93e45422df4b9249c88f87b42a443))
 - Drop the grip when multiple people pick it up at the same time ([`dce4ef4`](https://github.com/JanSharp/VRCMovementGrip/commit/dce4ef47a749ee4d2418cfbba921600f597765ef))
 
+[1.1.5]: https://github.com/JanSharp/VRCMovementGrip/releases/tag/v1.1.5
 [1.1.4]: https://github.com/JanSharp/VRCMovementGrip/releases/tag/v1.1.4
 [1.1.3]: https://github.com/JanSharp/VRCMovementGrip/releases/tag/v1.1.3
 [1.1.2]: https://github.com/JanSharp/VRCMovementGrip/releases/tag/v1.1.2
