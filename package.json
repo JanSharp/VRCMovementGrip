@@ -1,6 +1,6 @@
 {
   "name": "com.jansharp.movement-grip",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Move objects along an axis or a plane with VRC Pickups, synced.",
   "displayName": "Movement Grip",
   "unity": "2019.4",
@@ -14,6 +14,6 @@
     "com.vrchat.worlds": "^3.4.x",
     "com.jansharp.common": ">=1.0.0"
   },
-  "url": "https://github.com/JanSharp/VRCMovementGrip/releases/download/v1.2.1/com.jansharp.movement-grip.zip",
-  "changelogUrl": "https://github.com/JanSharp/VRCMovementGrip/blob/v1.2.1/CHANGELOG.md"
+  "url": "https://github.com/JanSharp/VRCMovementGrip/releases/download/v1.2.2/com.jansharp.movement-grip.zip",
+  "changelogUrl": "https://github.com/JanSharp/VRCMovementGrip/blob/v1.2.2/CHANGELOG.md"
 }
