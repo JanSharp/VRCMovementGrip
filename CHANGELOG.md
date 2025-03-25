@@ -1,6 +1,13 @@
 
 # Changelog
 
+## [1.2.1] - 2025-03-25
+
+### Changed
+
+- Add note to ensure to adjust the rigid body ([`30c944b`](https://github.com/JanSharp/VRCMovementGrip/commit/30c944b420c46a50be765cbd5929ebe2b7db9cdc))
+- Update license year, a bit late ([`5a47074`](https://github.com/JanSharp/VRCMovementGrip/commit/5a47074b6973fa205c316bc6caecb42483cc2a3f))
+
 ## [1.2.0] - 2025-03-25
 
 ### Changed
@@ -112,6 +119,7 @@ _First version of this package that is in the VCC listing._
 - Add syncing with interpolation ([`bc5fbaa`](https://github.com/JanSharp/VRCMovementGrip/commit/bc5fbaa546fb26282f3190f095a9a26858b54ffb), [`22b4550`](https://github.com/JanSharp/VRCMovementGrip/commit/22b455090db7e18b94d6bb3ad15cf6dae6f31a12), [`fe16657`](https://github.com/JanSharp/VRCMovementGrip/commit/fe16657dcab93e45422df4b9249c88f87b42a443))
 - Drop the grip when multiple people pick it up at the same time ([`dce4ef4`](https://github.com/JanSharp/VRCMovementGrip/commit/dce4ef47a749ee4d2418cfbba921600f597765ef))
 
+[1.2.1]: https://github.com/JanSharp/VRCMovementGrip/releases/tag/v1.2.1
 [1.2.0]: https://github.com/JanSharp/VRCMovementGrip/releases/tag/v1.2.0
 [1.1.6]: https://github.com/JanSharp/VRCMovementGrip/releases/tag/v1.1.6
 [1.1.5]: https://github.com/JanSharp/VRCMovementGrip/releases/tag/v1.1.5
