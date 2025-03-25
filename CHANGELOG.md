@@ -1,6 +1,18 @@
 
 # Changelog
 
+## [1.2.0] - 2025-03-25
+
+### Changed
+
+- **Breaking:** Make min max variable names less confusing, especially when coming from blender ([`91ca7d9`](https://github.com/JanSharp/VRCMovementGrip/commit/91ca7d95c8cef67361310b4b58d74deb78f22a87))
+- Bump dependency on `com.jansharp.common` to `v1.0.0` for the singleton management. Should have been part of `v1.1.5` ([`9a6b3cf`](https://github.com/JanSharp/VRCMovementGrip/commit/9a6b3cfa38a42d4fa267cd943e18dc7b20afc12d))
+
+### Added
+
+- Add SetLocalPositionOfToMove api function ([`c81d038`](https://github.com/JanSharp/VRCMovementGrip/commit/c81d03855d3efa111a1e22931895017b674fa8a1))
+- Add begin and end movement events ([`8e9ebe0`](https://github.com/JanSharp/VRCMovementGrip/commit/8e9ebe0f845d1c3d67dddf9776172c80a77dae6a), [`626faa3`](https://github.com/JanSharp/VRCMovementGrip/commit/626faa357e8832296f751789f9d1632c3d7e8d80))
+
 ## [1.1.6] - 2025-03-25
 
 _This should have been part of the previous release._
@@ -100,6 +112,7 @@ _First version of this package that is in the VCC listing._
 - Add syncing with interpolation ([`bc5fbaa`](https://github.com/JanSharp/VRCMovementGrip/commit/bc5fbaa546fb26282f3190f095a9a26858b54ffb), [`22b4550`](https://github.com/JanSharp/VRCMovementGrip/commit/22b455090db7e18b94d6bb3ad15cf6dae6f31a12), [`fe16657`](https://github.com/JanSharp/VRCMovementGrip/commit/fe16657dcab93e45422df4b9249c88f87b42a443))
 - Drop the grip when multiple people pick it up at the same time ([`dce4ef4`](https://github.com/JanSharp/VRCMovementGrip/commit/dce4ef47a749ee4d2418cfbba921600f597765ef))
 
+[1.2.0]: https://github.com/JanSharp/VRCMovementGrip/releases/tag/v1.2.0
 [1.1.6]: https://github.com/JanSharp/VRCMovementGrip/releases/tag/v1.1.6
 [1.1.5]: https://github.com/JanSharp/VRCMovementGrip/releases/tag/v1.1.5
 [1.1.4]: https://github.com/JanSharp/VRCMovementGrip/releases/tag/v1.1.4
