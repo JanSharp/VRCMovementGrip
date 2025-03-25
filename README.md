@@ -13,6 +13,9 @@ Head to my [VCC Listing](https://jansharp.github.io/vrc/vcclisting.xhtml) and fo
 - Extra support for VR to use the hand position to more accurately move the target object
   - In desktop it's currently just using the position of the object with the VRC pickup, which with bigger objects can get pretty inaccurate
 - Syncing, naturally including late joiners (This one is one of the easier ones to sync)
+- Custom scripts can be added to a `Listeners` array in the inspector. These scripts must define **both** of these public methods:
+  - `OnBeginMovement()`
+  - `OnEndMovement()`
 
 Make sure that the VRC Pickup has its Orientation set to Grip or Gun while the Exact Grip/Gun are left empty. That way the invisible pickupable object will not move towards the hand, it simply stays at the exact relative position that it was at when you picked it up.
 

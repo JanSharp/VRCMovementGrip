@@ -30,6 +30,8 @@ namespace JanSharp
         // for UpdateManager
         private int customUpdateInternalIndex;
 
+        public UdonSharpBehaviour[] listeners;
+
         private float nextSyncTime;
         private const float SyncInterval = 0.2f;
         private const float LerpDuration = SyncInterval + 0.1f;
@@ -92,6 +94,7 @@ namespace JanSharp
             Receiving = false;
             CurrentlyHeld = true;
             updateManager.Register(this);
+            DispatchOnBeginMovement();
         }
 
         public override void OnDrop()
@@ -100,6 +103,7 @@ namespace JanSharp
             RequestSerialization();
             SnapBack();
             updateManager.Deregister(this);
+            DispatchOnEndMovement();
         }
 
         public void CustomUpdate()
@@ -113,6 +117,7 @@ namespace JanSharp
                     Receiving = false;
                     updateManager.Deregister(this);
                     SnapBack();
+                    DispatchOnEndMovement();
                     return;
                 }
                 toMove.localPosition = Vector3.Lerp(lerpStartPosition, syncedPosition, percent);
@@ -155,6 +160,21 @@ namespace JanSharp
             lastReceivedTime = Time.time;
             lerpStartPosition = toMove.localPosition;
             updateManager.Register(this);
+            DispatchOnBeginMovement();
+        }
+
+        public void DispatchOnBeginMovement()
+        {
+            foreach (UdonSharpBehaviour listener in listeners)
+                if (listener != null)
+                    listener.SendCustomEvent("OnBeginMovement");
+        }
+
+        public void DispatchOnEndMovement()
+        {
+            foreach (UdonSharpBehaviour listener in listeners)
+                if (listener != null)
+                    listener.SendCustomEvent("OnEndMovement");
         }
     }
 }
