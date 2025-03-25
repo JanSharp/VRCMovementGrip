@@ -21,7 +21,7 @@ namespace JanSharp
         public float maxForwardDeviation = float.PositiveInfinity;
         public float maxBackDeviation = float.PositiveInfinity;
 
-        [HideInInspector] public UpdateManager updateManager;
+        [HideInInspector] [SingletonReference] public UpdateManager updateManager;
         [HideInInspector] public VRC_Pickup pickup;
         [HideInInspector] public Vector3 targetInitialLocalPosition;
         [HideInInspector] public Vector3 thisInitialLocalPosition;
