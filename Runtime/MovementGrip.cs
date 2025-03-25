@@ -3,6 +3,7 @@ using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
 using VRC.SDK3.Components;
+using UnityEngine.Serialization;
 
 namespace JanSharp
 {
@@ -14,12 +15,18 @@ namespace JanSharp
         public bool allowMovementOnX;
         public bool allowMovementOnY;
         public bool allowMovementOnZ;
-        public float maxRightDeviation = float.PositiveInfinity;
-        public float maxLeftDeviation = float.PositiveInfinity;
-        public float maxUpDeviation = float.PositiveInfinity;
-        public float maxDownDeviation = float.PositiveInfinity;
-        public float maxForwardDeviation = float.PositiveInfinity;
-        public float maxBackDeviation = float.PositiveInfinity;
+        [FormerlySerializedAs("maxRightDeviation")]
+        public float maxPositiveXDeviation = float.PositiveInfinity;
+        [FormerlySerializedAs("maxLeftDeviation")]
+        public float maxNegativeXDeviation = float.PositiveInfinity;
+        [FormerlySerializedAs("maxUpDeviation")]
+        public float maxPositiveYDeviation = float.PositiveInfinity;
+        [FormerlySerializedAs("maxDownDeviation")]
+        public float maxNegativeYDeviation = float.PositiveInfinity;
+        [FormerlySerializedAs("maxForwardDeviation")]
+        public float maxPositiveZDeviation = float.PositiveInfinity;
+        [FormerlySerializedAs("maxBackDeviation")]
+        public float maxNegativeZDeviation = float.PositiveInfinity;
 
         [HideInInspector] [SingletonReference] public UpdateManager updateManager;
         [HideInInspector] public VRC_Pickup pickup;
@@ -146,17 +153,17 @@ namespace JanSharp
         private Vector3 ClampLocalVector(Vector3 localVector)
         {
             if (allowMovementOnX)
-                localVector.x = Mathf.Clamp(localVector.x, -maxLeftDeviation, maxRightDeviation);
+                localVector.x = Mathf.Clamp(localVector.x, -maxNegativeXDeviation, maxPositiveXDeviation);
             else
                 localVector.x = 0;
 
             if (allowMovementOnY)
-                localVector.y = Mathf.Clamp(localVector.y, -maxDownDeviation, maxUpDeviation);
+                localVector.y = Mathf.Clamp(localVector.y, -maxNegativeYDeviation, maxPositiveYDeviation);
             else
                 localVector.y = 0;
 
             if (allowMovementOnZ)
-                localVector.z = Mathf.Clamp(localVector.z, -maxBackDeviation, maxForwardDeviation);
+                localVector.z = Mathf.Clamp(localVector.z, -maxNegativeZDeviation, maxPositiveZDeviation);
             else
                 localVector.z = 0;
 
