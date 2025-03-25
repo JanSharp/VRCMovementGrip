@@ -16,6 +16,7 @@ Head to my [VCC Listing](https://jansharp.github.io/vrc/vcclisting.xhtml) and fo
 - Custom scripts can be added to a `Listeners` array in the inspector. These scripts must define **both** of these public methods:
   - `OnBeginMovement()`
   - `OnEndMovement()`
+- `SetLocalPositionOfToMove` api function on the `MovementGrip` script to set the local position of the `toMove` object and sync it
 
 Make sure that the VRC Pickup has its Orientation set to Grip or Gun while the Exact Grip/Gun are left empty. That way the invisible pickupable object will not move towards the hand, it simply stays at the exact relative position that it was at when you picked it up.
 

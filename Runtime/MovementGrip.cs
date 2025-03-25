@@ -129,6 +129,20 @@ namespace JanSharp
                 : this.transform.parent.TransformVector(this.transform.localPosition - thisInitialLocalPosition);
             var localVector = toMove.parent.InverseTransformVector(worldVector);
 
+            localVector = ClampLocalVector(localVector);
+
+            toMove.localPosition = targetInitialLocalPosition + localVector;
+
+            syncedPosition = targetInitialLocalPosition + localVector;
+            if (Time.time >= nextSyncTime)
+            {
+                RequestSerialization();
+                nextSyncTime = Time.time + SyncInterval;
+            }
+        }
+
+        private Vector3 ClampLocalVector(Vector3 localVector)
+        {
             if (allowMovementOnX)
                 localVector.x = Mathf.Clamp(localVector.x, -maxLeftDeviation, maxRightDeviation);
             else
@@ -144,14 +158,7 @@ namespace JanSharp
             else
                 localVector.z = 0;
 
-            toMove.localPosition = targetInitialLocalPosition + localVector;
-
-            syncedPosition = targetInitialLocalPosition + localVector;
-            if (Time.time >= nextSyncTime)
-            {
-                RequestSerialization();
-                nextSyncTime = Time.time + SyncInterval;
-            }
+            return localVector;
         }
 
         public override void OnDeserialization()
@@ -175,6 +182,25 @@ namespace JanSharp
             foreach (UdonSharpBehaviour listener in listeners)
                 if (listener != null)
                     listener.SendCustomEvent("OnEndMovement");
+        }
+
+        /// <summary>
+        /// <para>Begin a lerp from the <see cref="Transform.localPosition"/> of <see cref="toMove"/> to the
+        /// given <paramref name="localPosition"/> and syncs it to all players.</para>
+        /// <para>The given <paramref name="localPosition"/> gets clamped the same way movement is restricted
+        /// when a player is moving the object using the pickup.</para>
+        /// <para>If any player is currently holding the pickup, it gets dropped.</para>
+        /// </summary>
+        /// <param name="localPosition"></param>
+        public void SetLocalPositionOfToMove(Vector3 localPosition)
+        {
+            Vector3 localVector = localPosition - targetInitialLocalPosition;
+            localVector = ClampLocalVector(localVector);
+            syncedPosition = targetInitialLocalPosition + localVector;
+            Networking.SetOwner(Networking.LocalPlayer, this.gameObject);
+            RequestSerialization();
+            nextSyncTime = Time.time + SyncInterval;
+            OnDeserialization(); // Make it lerp locally too.
         }
     }
 }
