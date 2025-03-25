@@ -1,5 +1,5 @@
 
-# Chalkboard
+# Movement Grip
 
 Move objects along an axis or a plane with VRC Pickups in a synced fashion with acceptable interpolation.
 
