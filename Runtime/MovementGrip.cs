@@ -30,6 +30,8 @@ namespace JanSharp
         // for UpdateManager
         private int customUpdateInternalIndex;
 
+        private bool isMovingAccordingToAPI = false;
+
         public UdonSharpBehaviour[] listeners;
 
         private float nextSyncTime;
@@ -172,6 +174,9 @@ namespace JanSharp
 
         public void DispatchOnBeginMovement()
         {
+            if (isMovingAccordingToAPI)
+                return;
+            isMovingAccordingToAPI = true;
             foreach (UdonSharpBehaviour listener in listeners)
                 if (listener != null)
                     listener.SendCustomEvent("OnBeginMovement");
@@ -179,6 +184,9 @@ namespace JanSharp
 
         public void DispatchOnEndMovement()
         {
+            if (!isMovingAccordingToAPI)
+                return;
+            isMovingAccordingToAPI = false;
             foreach (UdonSharpBehaviour listener in listeners)
                 if (listener != null)
                     listener.SendCustomEvent("OnEndMovement");
