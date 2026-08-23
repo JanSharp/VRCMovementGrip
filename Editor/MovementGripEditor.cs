@@ -1,17 +1,17 @@
 ﻿using UdonSharp;
+using UdonSharpEditor;
+using UnityEditor;
 using UnityEngine;
+using VRC.SDK3.Components;
 using VRC.SDKBase;
 using VRC.Udon;
-using VRC.SDK3.Components;
-using UnityEditor;
-using UdonSharpEditor;
 
 namespace JanSharp
 {
-    [InitializeOnLoad]
     public static class MovementGripOnBuild
     {
-        static MovementGripOnBuild() => JanSharp.OnBuildUtil.RegisterType<MovementGrip>(OnBuild);
+        [OrderedInitializeOnLoad]
+        private static void OnAssemblyLoad() => JanSharp.OnBuildUtil.RegisterType<MovementGrip>(OnBuild);
 
         private static bool OnBuild(MovementGrip movementGrip)
         {
