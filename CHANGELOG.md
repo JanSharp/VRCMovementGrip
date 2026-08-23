@@ -1,6 +1,12 @@
 
 # Changelog
 
+## [1.2.2] - 2026-08-23
+
+### Changed
+
+- Update `com.jansharp.common` dependency to 1.4.0 ([`c3bcba1`](https://github.com/JanSharp/VRCMovementGrip/commit/c3bcba14c69f3f319542aba62e3e32b2ad2485c3))
+
 ## [1.2.1] - 2025-03-25
 
 ### Changed
@@ -119,6 +125,7 @@ _First version of this package that is in the VCC listing._
 - Add syncing with interpolation ([`bc5fbaa`](https://github.com/JanSharp/VRCMovementGrip/commit/bc5fbaa546fb26282f3190f095a9a26858b54ffb), [`22b4550`](https://github.com/JanSharp/VRCMovementGrip/commit/22b455090db7e18b94d6bb3ad15cf6dae6f31a12), [`fe16657`](https://github.com/JanSharp/VRCMovementGrip/commit/fe16657dcab93e45422df4b9249c88f87b42a443))
 - Drop the grip when multiple people pick it up at the same time ([`dce4ef4`](https://github.com/JanSharp/VRCMovementGrip/commit/dce4ef47a749ee4d2418cfbba921600f597765ef))
 
+[1.2.2]: https://github.com/JanSharp/VRCMovementGrip/releases/tag/v1.2.2
 [1.2.1]: https://github.com/JanSharp/VRCMovementGrip/releases/tag/v1.2.1
 [1.2.0]: https://github.com/JanSharp/VRCMovementGrip/releases/tag/v1.2.0
 [1.1.6]: https://github.com/JanSharp/VRCMovementGrip/releases/tag/v1.1.6
